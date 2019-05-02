@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DualityOfMan.Views.SettingsPage"
+             BackgroundColor="{StaticResource PrimaryDark}"
+             Title="{Binding Title}">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Back" Command="{Binding BackCommand}"/>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <StackLayout Padding="15">
+            <Label Text="The Duality of Man. Such a philosophical phrase. What does it mean? Who created it? No one knows. It means whatever you want it to mean. It exists for you to mold into the definition of your creating. Everything in this world is either a potato or not a potato. It's the Duality of Man. I don't know make some memes and don't ask questions. And if you want even more Duality of Man fun tap the button below to go to our website."
+                VerticalOptions="Start" 
+                HorizontalOptions="CenterAndExpand" 
+                TextColor="WhiteSmoke"/>
+            <Button Text="Open DualityOfMan.pw" CornerRadius="15" BackgroundColor="{StaticResource PrimaryLight}"
+                        TextColor="WhiteSmoke" Command="{Binding OpenWebsiteCommand}" Margin="10"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

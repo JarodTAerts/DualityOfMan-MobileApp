@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DualityOfMan.Views.DualityViewerPage"
+             BackgroundColor="{StaticResource PrimaryDark}"
+             Title="{Binding Title}">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Cancel" Command="{Binding CancelCommand}"/>
+    </ContentPage.ToolbarItems>
+
+    <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+        <StackLayout AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1">
+            <ScrollView>
+                <StackLayout>
+                    <Button Text="Save" CornerRadius="15" BackgroundColor="{StaticResource PrimaryLight}"
+                        TextColor="WhiteSmoke" Command="{Binding SaveCommand}" CommandParameter="{Binding Source={x:Reference DualityView}}" Margin="10"/>
+                    <AbsoluteLayout x:Name="DualityView" Margin="10" Grid.Row="0" HeightRequest="653">
+                        <Image Source="duality_of_man_base" Margin="0" Aspect="Fill"
+                           AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All"/>
+
+                        <Label Text="{Binding Duality1}" TextColor="WhiteSmoke" FontSize="25" 
+                           AbsoluteLayout.LayoutBounds="0.38,0.065,0.3,0.2" LineBreakMode="WordWrap" 
+                           HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
+                           AbsoluteLayout.LayoutFlags="All"/>
+
+                        <Label Text="{Binding Duality2}" TextColor="WhiteSmoke" FontSize="25"
+                           AbsoluteLayout.LayoutBounds="0.81,0.125,0.3,0.2" LineBreakMode="WordWrap" 
+                           HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
+                           AbsoluteLayout.LayoutFlags="All"/>
+
+                        <Label Text="{Binding Duality1}" TextColor="Black" FontSize="25"
+                           AbsoluteLayout.LayoutBounds="0.23,0.55,0.3,0.2" LineBreakMode="WordWrap" 
+                           HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
+                           AbsoluteLayout.LayoutFlags="All"/>
+
+                        <Label Text="{Binding Duality2}" TextColor="Black" FontSize="25"
+                            AbsoluteLayout.LayoutBounds="0.62,0.46,0.3,0.2" LineBreakMode="WordWrap" 
+                           HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
+                           AbsoluteLayout.LayoutFlags="All"/>
+
+                        <Label Text="Man" TextColor="Black" FontSize="25"
+                            AbsoluteLayout.LayoutBounds="0.45,0.89,0.25,0.1" LineBreakMode="WordWrap" 
+                           HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
+                           AbsoluteLayout.LayoutFlags="All">
+                        </Label>
+                    </AbsoluteLayout>
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+
+        <StackLayout Padding="12" IsVisible="{Binding IsLoading}"
+                 AbsoluteLayout.LayoutFlags="PositionProportional"
+                 AbsoluteLayout.LayoutBounds="0.5,0.5,-1,-1">
+
+            <ActivityIndicator IsRunning="{Binding IsLoading}"/>
+
+            <Label Text="Saving..." FontSize="Large" HorizontalOptions="Center" TextColor="Black"/>
+
+        </StackLayout>
+    </AbsoluteLayout>
+
+</ContentPage>
