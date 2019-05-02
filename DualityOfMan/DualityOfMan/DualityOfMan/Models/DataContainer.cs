@@ -6,7 +6,7 @@ namespace DualityOfMan.Models
 {
     public static class DataContainer
     {
-        private static List<string> WordData;
+        public static List<string> WordData;
 
         public static string GetRandomWord()
         {
